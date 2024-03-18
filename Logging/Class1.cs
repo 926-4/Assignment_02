@@ -2,8 +2,9 @@
 {
     public class LoggingModule
     {
-        void MEthod()
+        public void MEthod()
         {
+            Console.WriteLine("Eu sunt Ciprian :)");
             Console.WriteLine("Eu sunt Ciprian :)");
         }
     }
