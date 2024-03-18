@@ -9,7 +9,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\Logging\Logging.csproj"></ProjectReference>
-		<ProjectReference Include="..\DataValidation\DataValidation.csproj"></ProjectReference>
+		<ProjectReference Include="..\Valid\Valid.csproj"></ProjectReference>
 	</ItemGroup>
 
 </Project>

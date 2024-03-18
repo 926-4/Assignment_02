@@ -1,0 +1,12 @@
+C:\Users\victo\OneDrive\Desktop\uni\Semestrul 4\SE\Confinguring Git PLeaseeee work\Valid\bin\Debug\net8.0\Valid.deps.json
+C:\Users\victo\OneDrive\Desktop\uni\Semestrul 4\SE\Confinguring Git PLeaseeee work\Valid\bin\Debug\net8.0\Valid.dll
+C:\Users\victo\OneDrive\Desktop\uni\Semestrul 4\SE\Confinguring Git PLeaseeee work\Valid\bin\Debug\net8.0\Valid.pdb
+C:\Users\victo\OneDrive\Desktop\uni\Semestrul 4\SE\Confinguring Git PLeaseeee work\Valid\obj\Debug\net8.0\Valid.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\victo\OneDrive\Desktop\uni\Semestrul 4\SE\Confinguring Git PLeaseeee work\Valid\obj\Debug\net8.0\Valid.AssemblyInfoInputs.cache
+C:\Users\victo\OneDrive\Desktop\uni\Semestrul 4\SE\Confinguring Git PLeaseeee work\Valid\obj\Debug\net8.0\Valid.AssemblyInfo.cs
+C:\Users\victo\OneDrive\Desktop\uni\Semestrul 4\SE\Confinguring Git PLeaseeee work\Valid\obj\Debug\net8.0\Valid.csproj.CoreCompileInputs.cache
+C:\Users\victo\OneDrive\Desktop\uni\Semestrul 4\SE\Confinguring Git PLeaseeee work\Valid\obj\Debug\net8.0\Valid.sourcelink.json
+C:\Users\victo\OneDrive\Desktop\uni\Semestrul 4\SE\Confinguring Git PLeaseeee work\Valid\obj\Debug\net8.0\Valid.dll
+C:\Users\victo\OneDrive\Desktop\uni\Semestrul 4\SE\Confinguring Git PLeaseeee work\Valid\obj\Debug\net8.0\refint\Valid.dll
+C:\Users\victo\OneDrive\Desktop\uni\Semestrul 4\SE\Confinguring Git PLeaseeee work\Valid\obj\Debug\net8.0\Valid.pdb
+C:\Users\victo\OneDrive\Desktop\uni\Semestrul 4\SE\Confinguring Git PLeaseeee work\Valid\obj\Debug\net8.0\ref\Valid.dll
