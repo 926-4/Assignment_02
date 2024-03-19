@@ -1,0 +1,12 @@
+C:\Users\Sirbu\Source\Repos\Assignment_02_2\ConfigurationManagement\bin\Debug\net8.0\ConfigurationManagement.deps.json
+C:\Users\Sirbu\Source\Repos\Assignment_02_2\ConfigurationManagement\bin\Debug\net8.0\ConfigurationManagement.dll
+C:\Users\Sirbu\Source\Repos\Assignment_02_2\ConfigurationManagement\bin\Debug\net8.0\ConfigurationManagement.pdb
+C:\Users\Sirbu\Source\Repos\Assignment_02_2\ConfigurationManagement\obj\Debug\net8.0\ConfigurationManagement.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sirbu\Source\Repos\Assignment_02_2\ConfigurationManagement\obj\Debug\net8.0\ConfigurationManagement.AssemblyInfoInputs.cache
+C:\Users\Sirbu\Source\Repos\Assignment_02_2\ConfigurationManagement\obj\Debug\net8.0\ConfigurationManagement.AssemblyInfo.cs
+C:\Users\Sirbu\Source\Repos\Assignment_02_2\ConfigurationManagement\obj\Debug\net8.0\ConfigurationManagement.csproj.CoreCompileInputs.cache
+C:\Users\Sirbu\Source\Repos\Assignment_02_2\ConfigurationManagement\obj\Debug\net8.0\ConfigurationManagement.sourcelink.json
+C:\Users\Sirbu\Source\Repos\Assignment_02_2\ConfigurationManagement\obj\Debug\net8.0\ConfigurationManagement.dll
+C:\Users\Sirbu\Source\Repos\Assignment_02_2\ConfigurationManagement\obj\Debug\net8.0\refint\ConfigurationManagement.dll
+C:\Users\Sirbu\Source\Repos\Assignment_02_2\ConfigurationManagement\obj\Debug\net8.0\ConfigurationManagement.pdb
+C:\Users\Sirbu\Source\Repos\Assignment_02_2\ConfigurationManagement\obj\Debug\net8.0\ref\ConfigurationManagement.dll
