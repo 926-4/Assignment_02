@@ -36,6 +36,7 @@ namespace Valid
                 case ValidationMode.VALIDATE_PHONE_NUMBER: return new PhoneNumberValidator(config);
                 case ValidationMode.VALIDATE_EMAIL_ADDRESS: return new EmailAddressValidator(config);
                 case ValidationMode.VALIDATE_DATE_TIME: return new DateTimeValidator(config);
+                default: throw new Exception("");
             }
         }
     }
