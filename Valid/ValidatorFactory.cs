@@ -1,6 +1,26 @@
 ﻿using System.Runtime.CompilerServices;
 namespace Valid
 {
+    
+    class CensoringValidator : IValidator
+    {
+        internal CensoringValidator(string config = "full")
+        {
+
+        }
+        public string Apply(string input)
+        {
+            return input;
+        }
+    }
+    class PhoneNumberValidator : IValidator
+    {
+        internal PhoneNumberValidator(string config = "full") { }
+        public string Apply(string input)
+        {
+            return input;
+        }
+    }
     class EmailAddressValidator : IValidator
     {
         internal EmailAddressValidator(string config = "full") { }
@@ -29,14 +49,7 @@ namespace Valid
     {
         public IValidator getValidator(ValidationMode validationMode, string config="full")
         {
-            switch (validationMode)
-            {
-                case ValidationMode.SQL_COMMAND_SANITIZER: return new SQLValidator(config);
-                case ValidationMode.CENSOR_FORBIDDEN_WORDS: return new CensoringValidator(config);
-                case ValidationMode.VALIDATE_PHONE_NUMBER: return new PhoneNumberValidator(config);
-                case ValidationMode.VALIDATE_EMAIL_ADDRESS: return new EmailAddressValidator(config);
-                case ValidationMode.VALIDATE_DATE_TIME: return new DateTimeValidator(config);
-            }
+            return new SQLValidator();
         }
     }
 }
