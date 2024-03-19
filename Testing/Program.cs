@@ -6,6 +6,8 @@ internal static class Program
     static private bool testValidator()
     {
         ValidatorFactory vf = new ValidatorFactory();
+        
+        /// test sql injection
         IValidator sql = vf.getValidator(Valid.ValidationMode.SQL_COMMAND_SANITIZER);
         string input, output;
         input = "SELECT * FROM STUDENTS WHERE NAME = \"Mark\"; DROP TABLE STUDENTS \"\"";
@@ -13,6 +15,31 @@ internal static class Program
         if (output != "SELECT * FROM STUDENTS WHERE NAME = \"Mark\"")
         {
             validatorExitMessage = "SQL Validation failed at noticing SQL bathced statement injection";
+            return false;
+        }
+        input = "SELECT * FROM STUDENTS WHERE NAME=\"Mark\" OR 1=   1\"\"";
+        output = sql.Apply(input);
+        if (output != "SELECT * FROM STUDENTS WHERE NAME=\"Mark\" OR\"\"")
+        {
+            validatorExitMessage = "SQL Validation failed at noticing SQL tautology injection";
+            return false;
+        }
+        
+        /// test censoring bad words
+        IValidator censor = vf.getValidator(Valid.ValidationMode.CENSOR_FORBIDDEN_WORDS, "bad word,hate");
+        input = "this string has a bad word";
+        output = censor.Apply(input);
+        if (output != "this string has a ***")
+        {
+            validatorExitMessage = "Censoring failed";
+            return false;
+        }
+        input = "this string is a message filled with hate, and has at least one bad word in it";
+        output = censor.Apply(input);
+        if (output!= "this string is a message filled with ***, and has at least one *** in it")
+        {
+            validatorExitMessage = "Censoring failed";
+            return false;
         }
         validatorExitMessage = "Validator test successfully passed";
         return true;

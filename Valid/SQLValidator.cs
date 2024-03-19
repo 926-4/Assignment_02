@@ -22,7 +22,7 @@ namespace Valid
         {
             if (input.Contains(";"))
             {
-                Console.WriteLine("Detected possible malignant batched statement in \"{0}\"", input);
+                ///Console.WriteLine("Detected possible malignant batched statement in \"{0}\"", input);
                 input = input.Split(";")[0];
             }
             return input;
@@ -32,7 +32,7 @@ namespace Valid
             Match checkForTautology = tautologyRegex.Match(input);
             if (checkForTautology.Success)
             {
-                Console.WriteLine("Detected possible malignant tautology in {0} at \"{1}\"", input, checkForTautology.Value);
+                ///Console.WriteLine("Detected possible malignant tautology in {0} at \"{1}\"", input, checkForTautology.Value);
                 input = input.Replace(checkForTautology.Value, "");
             }
             return input;
