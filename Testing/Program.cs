@@ -50,7 +50,7 @@ internal static class Program
             encrypterExitMessage = "Initialization failed";
             return false;
         }
-        catch (Exception e)
+        catch (Exception)
         {
 
         }
@@ -60,7 +60,7 @@ internal static class Program
             encrypterExitMessage = "Initialization failed";
             return false;
         }
-        catch (Exception e)
+        catch (Exception)
         {
 
         }
