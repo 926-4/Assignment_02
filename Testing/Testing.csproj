@@ -10,6 +10,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\Logging\Logging.csproj"></ProjectReference>
 		<ProjectReference Include="..\Valid\Valid.csproj"></ProjectReference>
+		<ProjectReference Include="..\Encryption\Encryption.csproj"></ProjectReference>
 	</ItemGroup>
 
 </Project>

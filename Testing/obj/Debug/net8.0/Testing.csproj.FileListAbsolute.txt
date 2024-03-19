@@ -38,3 +38,12 @@ C:\Users\victo\OneDrive\Desktop\uni\Semestrul 4\SE\Confinguring Git PLeaseeee wo
 C:\Users\victo\OneDrive\Desktop\uni\Semestrul 4\SE\Confinguring Git PLeaseeee work\Testing\obj\Debug\net8.0\ref\Testing.dll
 C:\Users\victo\OneDrive\Desktop\uni\Semestrul 4\SE\Confinguring Git PLeaseeee work\Testing\bin\Debug\net8.0\Valid.dll
 C:\Users\victo\OneDrive\Desktop\uni\Semestrul 4\SE\Confinguring Git PLeaseeee work\Testing\bin\Debug\net8.0\Valid.pdb
+D:\II\SSE\Assignment_02\Testing\obj\Debug\net8.0\Testing.csproj.AssemblyReference.cache
+D:\II\SSE\Assignment_02\Testing\obj\Debug\net8.0\Testing.GeneratedMSBuildEditorConfig.editorconfig
+D:\II\SSE\Assignment_02\Testing\obj\Debug\net8.0\Testing.AssemblyInfoInputs.cache
+D:\II\SSE\Assignment_02\Testing\obj\Debug\net8.0\Testing.AssemblyInfo.cs
+D:\II\SSE\Assignment_02\Testing\obj\Debug\net8.0\Testing.csproj.CoreCompileInputs.cache
+D:\II\SSE\Assignment_02\Testing\obj\Debug\net8.0\Testing.sourcelink.json
+D:\II\SSE\Assignment_02\Testing\obj\Debug\net8.0\Testing.dll
+D:\II\SSE\Assignment_02\Testing\obj\Debug\net8.0\refint\Testing.dll
+D:\II\SSE\Assignment_02\Testing\obj\Debug\net8.0\Testing.pdb

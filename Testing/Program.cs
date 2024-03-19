@@ -1,5 +1,6 @@
 ﻿using Logging;
 using Valid;
+using Encryption;
 internal static class Program
 {
     static private string validatorExitMessage="";
@@ -55,6 +56,41 @@ internal static class Program
     static private string encrypterExitMessage="";
     static private bool testEncrypter()
     {
+        Cypher cypher = new Cypher("bcdefghijklmnopqrstuvwxyza");
+        string input,output;
+        input = "An apple farm";
+        output=cypher.encrypt(input);
+        if(output!="Bo bqqmf gbsn")
+        {
+            encrypterExitMessage = "Encrypting failed";
+            return false;
+        }
+        input = cypher.decrypt(output);
+        if(input!="An apple farm")
+        {
+            encrypterExitMessage = "Decrypting failed";
+            return false;
+        }
+        try
+        {
+            cypher = new Cypher("bcdefghijklmnopqrstuvwxyz1");
+            encrypterExitMessage = "Initialization failed";
+            return false;
+        }
+        catch (Exception e)
+        {
+
+        }
+        try
+        {
+            cypher = new Cypher("bcdefghijklmnopqrstuvwxyz");
+            encrypterExitMessage = "Initialization failed";
+            return false;
+        }
+        catch (Exception e)
+        {
+
+        }
         encrypterExitMessage = "Encrypter test successfully passed";
         return true;
     }
@@ -82,6 +118,8 @@ internal static class Program
         Console.WriteLine(authenticaterExitMessage);
         testConfigurator();
         Console.WriteLine(configuratorExitMessage);
+        testEncrypter();
+        Console.WriteLine(encrypterExitMessage);
         ///Console.WriteLine("Press any key to terminate gracefully...");
         ///Console.ReadKey();
     }
