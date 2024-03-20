@@ -1,21 +1,10 @@
-﻿using System.Runtime.CompilerServices;
-namespace Valid
+﻿using System.Runtime.CompilerServicmespace Valid
 {
     
-    class CensoringValidator : IValidator
-    {
-        internal CensoringValidator(string config = "full")
-        {
 
-        }
-        public string Apply(string input)
-        {
-            return input;
-        }
-    }
     class PhoneNumberValidator : IValidator
     {
-        internal PhoneNumberValidator(string config = "full") { }
+        internal PhoneNumberValidator(string config = "default") { }
         public string Apply(string input)
         {
             return input;
@@ -23,7 +12,7 @@ namespace Valid
     }
     class EmailAddressValidator : IValidator
     {
-        internal EmailAddressValidator(string config = "full") { }
+        internal EmailAddressValidator(string config = "default") { }
         public string Apply(string input)
         {
             return input;
@@ -31,7 +20,7 @@ namespace Valid
     }
     class DateTimeValidator : IValidator
     {
-        internal DateTimeValidator(string config = "full") { }
+        internal DateTimeValidator(string config = "default") { }
         public string Apply(string input)
         {
             return input;
@@ -47,7 +36,7 @@ namespace Valid
     }
     public class ValidatorFactory
     {
-        public IValidator getValidator(ValidationMode validationMode, string config="full")
+        public IValidator getValidator(ValidationMode validationMode, string config="defaul")
         {
             switch (validationMode)
             {

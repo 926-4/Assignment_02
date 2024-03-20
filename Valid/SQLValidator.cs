@@ -5,11 +5,15 @@ namespace Valid
     {
         private static readonly Regex tautologyRegex = new("\\b(.*)\\s*=\\s*\\1\\b", RegexOptions.None);
         private static readonly List<string> allOptions = new List<string>() { "batched", "tautology" };
-        private string[] configOptions;
-        internal SQLValidator(string config = "full")
+        private List<string> configOptions;
+        internal SQLValidator(string config = "default")
         {
-            if (config == "full") config = "batched,tautology";
-            configOptions = config.Split(',');
+            if (config == "default")
+            {
+                configOptions = new List<string>() { "batched", "tautology" };
+                return; 
+            }
+            else configOptions = new List<string>(config.Split(','));
             foreach (string option in configOptions)
             {
                 if (!allOptions.Any(str => str == option))
@@ -49,7 +53,6 @@ namespace Valid
                     input = removeTautology(input);
                     continue;
                 }
-                throw new Exception("Invalid option for sql ");
             }
             return input;
         }

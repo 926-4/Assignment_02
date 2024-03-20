@@ -11,12 +11,21 @@ internal static class Program
     {
         ValidatorFactory vf = new ValidatorFactory();
         IValidator sql = vf.getValidator(Valid.ValidationMode.SQL_COMMAND_SANITIZER);
+        IValidator censor = vf.getValidator(Valid.ValidationMode.CENSOR_FORBIDDEN_WORDS);
         string input, output;
         input = "SELECT * FROM STUDENTS WHERE NAME = \"Mark\"; DROP TABLE STUDENTS \"\"";
         output = sql.Apply(input);
         if (output != "SELECT * FROM STUDENTS WHERE NAME = \"Mark\"")
         {
             validatorExitMessage = "SQL Validation failed at noticing SQL bathced statement injection";
+        }
+        input = "Eu sunt Ciprian";
+        output = censor.Apply(input);
+        if (output != "Eu sunt *******")
+        {
+            Console.WriteLine(output);
+            validatorExitMessage = "Censoring failed";
+            return false;
         }
         validatorExitMessage = "Validator test successfully passed";
         return true;
