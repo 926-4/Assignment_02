@@ -27,6 +27,30 @@ internal static class Program
             validatorExitMessage = "Censoring failed";
             return false;
         }
+        input = "Eu sunt ciprian";
+        output = censor.Apply(input);
+        if (output != "Eu sunt *******")
+        {
+            Console.WriteLine(output);
+            validatorExitMessage = "Censoring failed";
+            return false;
+        }
+        input = "Eu sunt CIPRIAN";
+        output = censor.Apply(input);
+        if (output != "Eu sunt *******")
+        {
+            Console.WriteLine(output);
+            validatorExitMessage = "Censoring failed";
+            return false;
+        }
+        input = "Eu sunt CIPRIAN ciprian";
+        output = censor.Apply(input);
+        if (output != "Eu sunt ******* *******")
+        {
+            Console.WriteLine(output);
+            validatorExitMessage = "Censoring failed";
+            return false;
+        }
         validatorExitMessage = "Validator test successfully passed";
         return true;
     }

@@ -9,7 +9,7 @@ namespace Valid
 		{
 			if (config.Contains('*'))
 				throw new Exception("You cannot ban the censoring character, sorry");
-			if (config == "full")
+			if (config == "default")
 			{
 				forbiddenWords = new List<string> { "idiot", "stupid", "shit", "fuck", "ass", "ciprian" };
 			}
@@ -23,19 +23,14 @@ namespace Valid
 			}
 
 		}
-		public string Apply(string input)
-		{
-			foreach (string bannedWord in forbiddenWords)
-			{
-				Match bannedCheck = patterns[bannedWord].Match(input);
-				while (bannedCheck.Success)
-				{
-					string replacement = new string('*', bannedCheck.Length);
-					input = input.Remove(bannedCheck.Index, bannedCheck.Length).Insert(bannedCheck.Index, replacement);
-					bannedCheck = bannedCheck.NextMatch();
-				}
-			}
-			return input;
-		}
-	}
+        public string Apply(string input)
+        {
+            foreach (var pattern in patterns)
+            {
+                string replacement = new string('*', pattern.Key.Length);
+                input = pattern.Value.Replace(input, replacement);
+            }
+            return input;
+        }
+    }
 }

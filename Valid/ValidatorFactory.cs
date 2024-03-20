@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServicmespace Valid
+﻿using System.Runtime;
+namespace Valid
 {
     
 
@@ -36,7 +37,7 @@
     }
     public class ValidatorFactory
     {
-        public IValidator getValidator(ValidationMode validationMode, string config="defaul")
+        public IValidator getValidator(ValidationMode validationMode, string config="default")
         {
             switch (validationMode)
             {
