@@ -1,6 +1,9 @@
 ﻿using Logging;
 using Valid;
 using Encryption;
+using Authentification;
+using ConfigurationManagement;
+using System.Configuration;
 internal static class Program
 {
     static private string validatorExitMessage="";
@@ -23,6 +26,8 @@ internal static class Program
     static private string loggerExitMessage="";
     static private bool testLogger()
     {
+        LoggingModule a = new LoggingModule();
+        a.LoggingMethod();
         loggerExitMessage = "Logger test successfully passed";
         return true;
     }
@@ -70,12 +75,16 @@ internal static class Program
     static private string authenticaterExitMessage="";
     static private bool testAuthenticator()
     {
+        AuthentificationModule b = new AuthentificationModule();
+        b.AuthMethod();
         authenticaterExitMessage = "Authenticater test successfully passed";
         return true;
     }
     static private string configuratorExitMessage="";
     static private bool testConfigurator()
     {
+        ConfigMngModule c = new ConfigMngModule();
+        c.ConfigMethod();
         configuratorExitMessage = "Configurator test successfully passed";
         return true;
     }
@@ -93,7 +102,7 @@ internal static class Program
         Console.WriteLine(configuratorExitMessage);
         testEncrypter();
         Console.WriteLine(encrypterExitMessage);
-        ///Console.WriteLine("Press any key to terminate gracefully...");
-        ///Console.ReadKey();
+        Console.WriteLine("Press any key to terminate gracefully...");
+        Console.ReadKey();
     }
 }
