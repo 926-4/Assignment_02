@@ -22,3 +22,15 @@ C:\Users\victo\OneDrive\Desktop\uni\Semestrul 4\SE\Confinguring Git PLeaseeee wo
 C:\Users\victo\OneDrive\Desktop\uni\Semestrul 4\SE\Confinguring Git PLeaseeee work\Logging\obj\Debug\net8.0\refint\Logging.dll
 C:\Users\victo\OneDrive\Desktop\uni\Semestrul 4\SE\Confinguring Git PLeaseeee work\Logging\obj\Debug\net8.0\Logging.pdb
 C:\Users\victo\OneDrive\Desktop\uni\Semestrul 4\SE\Confinguring Git PLeaseeee work\Logging\obj\Debug\net8.0\ref\Logging.dll
+C:\Users\Sirbu\Source\Repos\Assignment_02_2\Logging\bin\Debug\net8.0\Logging.deps.json
+C:\Users\Sirbu\Source\Repos\Assignment_02_2\Logging\bin\Debug\net8.0\Logging.dll
+C:\Users\Sirbu\Source\Repos\Assignment_02_2\Logging\bin\Debug\net8.0\Logging.pdb
+C:\Users\Sirbu\Source\Repos\Assignment_02_2\Logging\obj\Debug\net8.0\Logging.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sirbu\Source\Repos\Assignment_02_2\Logging\obj\Debug\net8.0\Logging.AssemblyInfoInputs.cache
+C:\Users\Sirbu\Source\Repos\Assignment_02_2\Logging\obj\Debug\net8.0\Logging.AssemblyInfo.cs
+C:\Users\Sirbu\Source\Repos\Assignment_02_2\Logging\obj\Debug\net8.0\Logging.csproj.CoreCompileInputs.cache
+C:\Users\Sirbu\Source\Repos\Assignment_02_2\Logging\obj\Debug\net8.0\Logging.sourcelink.json
+C:\Users\Sirbu\Source\Repos\Assignment_02_2\Logging\obj\Debug\net8.0\Logging.dll
+C:\Users\Sirbu\Source\Repos\Assignment_02_2\Logging\obj\Debug\net8.0\refint\Logging.dll
+C:\Users\Sirbu\Source\Repos\Assignment_02_2\Logging\obj\Debug\net8.0\Logging.pdb
+C:\Users\Sirbu\Source\Repos\Assignment_02_2\Logging\obj\Debug\net8.0\ref\Logging.dll
