@@ -102,7 +102,5 @@ internal static class Program
         Console.WriteLine(configuratorExitMessage);
         testEncrypter();
         Console.WriteLine(encrypterExitMessage);
-        Console.WriteLine("Press any key to terminate gracefully...");
-        Console.ReadKey();
     }
 }
