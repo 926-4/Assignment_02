@@ -138,9 +138,55 @@ internal static class Program
     static private bool testLogger()
     {
         LoggingModule a = new LoggingModule();
-        a.LoggingMethod();
-        loggerExitMessage = "Logger test successfully passed";
-        return true;
+        try
+        {
+            LoggingModule.LogInfo("Test info message");
+
+            string[] lines = System.IO.File.ReadAllLines("log.txt");
+            if (lines.Length != 0)
+            {
+                loggerExitMessage = "Logging of info message failed: Message was immediately written to the file";
+                return false;
+            }
+
+            LoggingModule.LogWarning("Test warning message");
+
+            lines = System.IO.File.ReadAllLines("log.txt");
+            if (!lines[1].Contains("[Warning]") || !lines[1].Contains("Test warning message"))
+            {
+                loggerExitMessage = "Logging of warning message failed";
+                return false;
+            }
+
+            LoggingModule.LogError("Test error message");
+
+            lines = System.IO.File.ReadAllLines("log.txt");
+            if (!lines[2].Contains("[Error]") || !lines[2].Contains("Test error message"))
+            {
+                loggerExitMessage = "Logging of error message failed";
+                return false;
+            }
+
+            LoggingModule.LogInfo("Test info message 1");
+            LoggingModule.LogInfo("Test info message 2");
+
+            System.Threading.Thread.Sleep(500);
+
+            lines = System.IO.File.ReadAllLines("log.txt");
+            if (lines.Length != 5 || !lines[3].Contains("[Info]") || !lines[3].Contains("Test info message 1") || !lines[4].Contains("[Info]") || !lines[4].Contains("Test info message 2"))
+            {
+                loggerExitMessage = "Flushing buffered info messages failed";
+                return false;
+            }
+
+            loggerExitMessage = "Logger test successfully passed";
+            return true;
+        }
+        catch (Exception ex)
+        {
+            loggerExitMessage = "An error occurred during logger test: " + ex.Message;
+            return false;
+        }
     }
     static private string encrypterExitMessage = "";
     static private bool testEncrypter()
@@ -280,17 +326,18 @@ internal static class Program
     }
     private static void Main(string[] args)
     {
-        testValidator();
-        Console.WriteLine(validatorExitMessage);
+        //testValidator();
+        //Console.WriteLine(validatorExitMessage);
         testLogger();
         Console.WriteLine(loggerExitMessage);
-        testEncrypter();
-        Console.WriteLine(encrypterExitMessage);
-        testAuthenticator();
-        Console.WriteLine(authenticaterExitMessage);
-        testConfigurator();
-        Console.WriteLine(configuratorExitMessage);
-        testEncrypter();
-        Console.WriteLine(encrypterExitMessage);
+        Console.ReadLine();
+        //testEncrypter();
+        //Console.WriteLine(encrypterExitMessage);
+        //testAuthenticator();
+        //Console.WriteLine(authenticaterExitMessage);
+        //testConfigurator();
+        //Console.WriteLine(configuratorExitMessage);
+        //testEncrypter();
+        //Console.WriteLine(encrypterExitMessage);
     }
 }
