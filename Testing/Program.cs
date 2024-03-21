@@ -326,18 +326,17 @@ internal static class Program
     }
     private static void Main(string[] args)
     {
-        //testValidator();
-        //Console.WriteLine(validatorExitMessage);
+        testValidator();
+        Console.WriteLine(validatorExitMessage);
         testLogger();
         Console.WriteLine(loggerExitMessage);
-        Console.ReadLine();
-        //testEncrypter();
-        //Console.WriteLine(encrypterExitMessage);
-        //testAuthenticator();
-        //Console.WriteLine(authenticaterExitMessage);
-        //testConfigurator();
-        //Console.WriteLine(configuratorExitMessage);
-        //testEncrypter();
-        //Console.WriteLine(encrypterExitMessage);
+        testEncrypter();
+        Console.WriteLine(encrypterExitMessage);
+        testAuthenticator();
+        Console.WriteLine(authenticaterExitMessage);
+        testConfigurator();
+        Console.WriteLine(configuratorExitMessage);
+        testEncrypter();
+        Console.WriteLine(encrypterExitMessage);
     }
 }
