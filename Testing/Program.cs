@@ -18,12 +18,19 @@ internal static class Program
         if (output != "SELECT * FROM STUDENTS WHERE NAME = \"Mark\"")
         {
             validatorExitMessage = "SQL Validation failed at noticing SQL bathced statement injection";
+            return false;
+        }
+        input = "SELECT * FROM Students WHERE NAME = \"THis is a benign string\"";
+        output = censor.Apply(input);
+        if(output != input)
+        {
+            validatorExitMessage = "SQL Validation overcorrects";
+            return false;
         }
         input = "Eu sunt Ciprian";
         output = censor.Apply(input);
         if (output != "Eu sunt *******")
         {
-            Console.WriteLine(output);
             validatorExitMessage = "Censoring failed";
             return false;
         }
@@ -31,7 +38,6 @@ internal static class Program
         output = censor.Apply(input);
         if (output != "Eu sunt *******")
         {
-            Console.WriteLine(output);
             validatorExitMessage = "Censoring failed";
             return false;
         }
@@ -39,7 +45,6 @@ internal static class Program
         output = censor.Apply(input);
         if (output != "Eu sunt *******")
         {
-            Console.WriteLine(output);
             validatorExitMessage = "Censoring failed";
             return false;
         }
@@ -47,7 +52,6 @@ internal static class Program
         output = censor.Apply(input);
         if (output != "Eu sunt ******* *******")
         {
-            Console.WriteLine(output);
             validatorExitMessage = "Censoring failed";
             return false;
         }
