@@ -1,14 +1,7 @@
 ﻿using System.Runtime;
 namespace Valid
 {
-    class EmailAddressValidator : IValidator
-    {
-        internal EmailAddressValidator(string config = "default") { }
-        public string Apply(string input)
-        {
-            return input;
-        }
-    }
+    
     public enum ValidationMode
     {
         SQL_COMMAND_SANITIZER,

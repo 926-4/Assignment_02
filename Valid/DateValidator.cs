@@ -2,6 +2,8 @@ namespace Valid
 { 
     class DateValidator : IValidator
     {
+        private List<string> format;
+        private Regex pattern; 
         private bool checkAllowedFormats(string toCheck)
         {
             return (toCheck == "dd-mm-yyyy") || (toCheck == "mm-dd-yyyy") || (toCheck == "yyyy-mm-dd") || (toCheck == "dd-mm-yy") || (toCheck == "mm-dd-yy");
@@ -14,20 +16,15 @@ namespace Valid
             }
             else
             {
-                if (!checkAllowedFormats(config))
-                {
-                    throw new Exception($"{config} is not among the allowed formats. " +
-                        $"\tdd-mm-yyyy\n" +
-                        $"\tmm-dd-yyyy\n" +
-                        $"\tyyyy-mm-dd\n" +
-                        $"\tdd-mm-yy\n" +
-                        $"\tmm-dd-yy");
-                }
+                /// implement some checks
+                config.Replace(".", "-").replace("/", "-");
             }
+            format = new List<string>() { config.Split("-") };
         }
         public string Apply(string input)
         {
-            return input;
+            int inputIndex = 0;
+
         }
     }
 }
