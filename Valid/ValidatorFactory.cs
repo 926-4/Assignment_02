@@ -8,7 +8,7 @@ namespace Valid
         CENSOR_FORBIDDEN_WORDS,
         VALIDATE_PHONE_NUMBER,
         VALIDATE_EMAIL_ADDRESS,
-        VALIDATE_DATE_TIME
+        VALIDATE_DATE //VALI_DATE
     }
     public class ValidatorFactory
     {
@@ -20,7 +20,7 @@ namespace Valid
                 case ValidationMode.CENSOR_FORBIDDEN_WORDS: return new CensoringValidator(config);
                 case ValidationMode.VALIDATE_PHONE_NUMBER: return new PhoneNumberValidator(config);
                 case ValidationMode.VALIDATE_EMAIL_ADDRESS: return new EmailAddressValidator(config);
-                case ValidationMode.VALIDATE_DATE_TIME: return new DateValidator(config);
+                case ValidationMode.VALIDATE_DATE: return new DateValidator(config);
                 default: throw new Exception("");
             }
         }

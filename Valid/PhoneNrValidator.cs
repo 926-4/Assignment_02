@@ -16,8 +16,7 @@ namespace Valid
         {
             if (config == "default")
             {
-                config = "(\\+[0-9]{1,3})?[0-9]{9}";
-             //   Console.WriteLine(config);
+                config = "(\\+\\d{1,3})?\\d{9}";
                 pattern = new(config, RegexOptions.None);
                 return;
             }
@@ -28,9 +27,8 @@ namespace Valid
                     throw new Exception($"Unaccepted character in phone number pattern --{c}-- The pattern should only contain +,-,(,) and whitespaces, along with n representing any digit");
                 }
             }
-            config = config.Replace("n", "[0-9]");
+            config = config.Replace("n", "\\d");
             config = escapeSpecificChars(config);
-            //Console.WriteLine(config);
             pattern = new(config, RegexOptions.None);
         }
         public string Apply(string input)

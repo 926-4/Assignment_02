@@ -12,7 +12,7 @@ namespace Valid
         {
             if(config == "default")
             {
-                config = "[a-z_][a-z_0-9.]*@[a-z_0-9]+\\.[a-z]{2,}"; 
+                config = "[A-Za-z0-9!\\-\\._]+@[A-Za-z0-9-]+\\.[a-z]{2,}"; 
             }
             else
             {
@@ -26,4 +26,6 @@ namespace Valid
             return (pattern.Matches(input).Count>0) ? input : "";
         }
     }
+
+
 }

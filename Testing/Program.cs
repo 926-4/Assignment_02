@@ -4,6 +4,7 @@ using Encryption;
 using Authentification;
 using ConfigurationManagement;
 using System.Configuration;
+using System.Reflection.Metadata.Ecma335;
 internal static class Program
 {
     static private string validatorExitMessage="";
@@ -14,6 +15,9 @@ internal static class Program
         IValidator censor = vf.getValidator(Valid.ValidationMode.CENSOR_FORBIDDEN_WORDS);
         IValidator romanianTelephoneNrChecker = vf.getValidator(Valid.ValidationMode.VALIDATE_PHONE_NUMBER, "+40nnnnnnnnn");
         IValidator phone = vf.getValidator(Valid.ValidationMode.VALIDATE_PHONE_NUMBER);
+        IValidator email = vf.getValidator(ValidationMode.VALIDATE_EMAIL_ADDRESS, "???.???@gmail.??");
+        IValidator defaultEmail = vf.getValidator(ValidationMode.VALIDATE_EMAIL_ADDRESS);
+        IValidator dateValidator = vf.getValidator(ValidationMode.VALIDATE_DATE);
         string input, output;
         input = "SELECT * FROM STUDENTS WHERE NAME = \"Mark\"; DROP TABLE STUDENTS \"\"";
         output = sql.Apply(input);
@@ -69,6 +73,62 @@ internal static class Program
         if(output != input)
         {
             validatorExitMessage = "Checking phone nr failed";
+            return false;
+        }
+        input = "abc.def@gmail.ro";
+        output = email.Apply(input);
+        if (output != input)
+        {
+            validatorExitMessage = "Checking email failed";
+            return false;
+        }
+        input = "fed.cba@gmail.hu";
+        output = email.Apply(input);
+        if (output != input)
+        {
+            validatorExitMessage = "Checking email failed";
+            return false;
+        }
+        input = "_._._._.@gogoga.ga";
+        output = defaultEmail.Apply(input);
+        if (output != input)
+        {
+            validatorExitMessage = "Checking email failed";
+            return false;
+        }
+        input = "fed.cba@gmail.hu";
+        output = defaultEmail.Apply(input);
+        if (output != input)
+        {
+            validatorExitMessage = "Checking email failed";
+            return false;
+        }
+        input = "this is not a valid email address";
+        output = defaultEmail.Apply(input);
+        if(output != "")
+        {
+            validatorExitMessage = "Checking email failed";
+            return false;
+        }
+        input = "21.03.2024";
+        output = dateValidator.Apply(input);
+        if(output != input)
+        {
+            validatorExitMessage = "Failed date validation";
+            return false;
+        }
+        input = "2.3.2024";
+        output = dateValidator.Apply(input);
+        if (output != input)
+        {
+            validatorExitMessage = "Failed date validation";
+            return false;
+        }
+        input = "2.13.2024";
+        output = dateValidator.Apply(input);
+        if (output != "")
+        {
+            validatorExitMessage = "Failed date validation";
             return false;
         }
         validatorExitMessage = "Validator test successfully passed";
