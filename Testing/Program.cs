@@ -141,7 +141,7 @@ internal static class Program
         try
         {
             LoggingModule.LogInfo("Test info message");
-
+            
             string[] lines = System.IO.File.ReadAllLines("log.txt");
             if (lines.Length != 0)
             {
@@ -308,9 +308,10 @@ internal static class Program
 
         }
         Thread.Sleep(11000);
-        if (!b.isUserLoggedIn(u1))
+        if (b.isUserLoggedIn(u1))
         {
             authenticaterExitMessage = "Authenticater test failed";
+            Console.WriteLine(1);
             return false;
         }
         authenticaterExitMessage = "Authenticater test successfully passed";
