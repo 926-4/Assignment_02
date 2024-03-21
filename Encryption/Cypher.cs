@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Encryption
 {
-    public class Cypher
+    public class Cypher : Encryption.ICypher
     {
-        public Cypher(string _key) {
+        public Cypher(string _key)
+        {
             if (_key != null && _key.Length != 26)
             {
                 throw new ArgumentException($"Invalid key length: {_key.Length} - Expected value: 26");
@@ -19,9 +20,9 @@ namespace Encryption
             }
             bool[] visited = new bool[26];
             Array.Fill(visited, false);
-            for (int i = 0; i < _key.Length; i++) 
-            { 
-                if(!(_key[i]>='a' && _key[i] <= 'z'))
+            for (int i = 0; i < _key.Length; i++)
+            {
+                if (!(_key[i] >= 'a' && _key[i] <= 'z'))
                 {
                     throw new ArgumentException($"Invalid key - key should onsist of only lowercase letters");
                 }
@@ -30,7 +31,7 @@ namespace Encryption
                     visited[_key[i] - 97] = true;
                 }
             }
-            for(int i=0;i < 26; i++)
+            for (int i = 0; i < 26; i++)
             {
                 if (!visited[i])
                 {
@@ -45,12 +46,33 @@ namespace Encryption
             get { return key; }
             set
             {
-                if(value != null && value.Length!=26 ) {
+                if (value != null && value.Length != 26)
+                {
                     throw new ArgumentException($"Invalid key length: {value.Length} - Expected value: 26");
                 }
-                if( value == null )
+                if (value == null)
                 {
                     throw new ArgumentException($"Key is null");
+                }
+                bool[] visited = new bool[26];
+                Array.Fill(visited, false);
+                for (int i = 0; i < key.Length; i++)
+                {
+                    if (!(key[i] >= 'a' && key[i] <= 'z'))
+                    {
+                        throw new ArgumentException($"Invalid key - key should onsist of only lowercase letters");
+                    }
+                    else
+                    {
+                        visited[key[i] - 97] = true;
+                    }
+                }
+                for (int i = 0; i < 26; i++)
+                {
+                    if (!visited[i])
+                    {
+                        throw new ArgumentException($"Invalid key - every letter of the alphbet should be mapped to a different letter");
+                    }
                 }
                 key = value;
             }
@@ -58,13 +80,14 @@ namespace Encryption
         public string encrypt(string plain)
         {
             char[] chars = new char[plain.Length];
-            for( int i = 0; i < plain.Length; i++ )
+            for (int i = 0; i < plain.Length; i++)
             {
-                if (plain[i]>='a' &&plain[i] <= 'z')
+                if (plain[i] >= 'a' && plain[i] <= 'z')
                 {
                     int j = plain[i] - 97;
                     chars[i] = key[j];
-                }else if (plain[i] >= 'A' && plain[i] <= 'Z')
+                }
+                else if (plain[i] >= 'A' && plain[i] <= 'Z')
                 {
                     int j = plain[i] - 65;
                     chars[i] = Char.ToUpper(key[j]);
@@ -79,17 +102,17 @@ namespace Encryption
         public string decrypt(string coded)
         {
             char[] chars = new char[coded.Length];
-            for( int i = 0;i < coded.Length;i++)
+            for (int i = 0; i < coded.Length; i++)
             {
                 if (coded[i] >= 'a' && coded[i] <= 'z')
                 {
                     int j = key.IndexOf(coded[i]);
-                    chars[i] = (char)(j+97);
+                    chars[i] = (char)(j + 97);
                 }
                 else if (coded[i] >= 'A' && coded[i] <= 'Z')
                 {
                     int j = key.IndexOf(Char.ToLower(coded[i]));
-                    chars[i] = Char.ToUpper((char)(j+97));
+                    chars[i] = Char.ToUpper((char)(j + 97));
                 }
                 else
                 {
@@ -99,4 +122,5 @@ namespace Encryption
             return new string(chars);
         }
     }
+
 }

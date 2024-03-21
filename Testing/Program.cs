@@ -134,8 +134,6 @@ internal static class Program
         validatorExitMessage = "Validator test successfully passed";
         return true;
     }
-
-
     static private string loggerExitMessage="";
     static private bool testLogger()
     {
@@ -144,20 +142,20 @@ internal static class Program
         loggerExitMessage = "Logger test successfully passed";
         return true;
     }
-    static private string encrypterExitMessage="";
+    static private string encrypterExitMessage = "";
     static private bool testEncrypter()
     {
         Cypher cypher = new Cypher("bcdefghijklmnopqrstuvwxyza");
-        string input,output;
+        string input, output;
         input = "An apple farm";
-        output=cypher.encrypt(input);
-        if(output!="Bo bqqmf gbsn")
+        output = cypher.encrypt(input);
+        if (output != "Bo bqqmf gbsn")
         {
             encrypterExitMessage = "Encrypting failed";
             return false;
         }
         input = cypher.decrypt(output);
-        if(input!="An apple farm")
+        if (input != "An apple farm")
         {
             encrypterExitMessage = "Decrypting failed";
             return false;
@@ -175,6 +173,40 @@ internal static class Program
         try
         {
             cypher = new Cypher("bcdefghijklmnopqrstuvwxyz");
+            encrypterExitMessage = "Initialization failed";
+            return false;
+        }
+        catch (Exception)
+        {
+
+        }
+        NumberCypher numberCypher = new NumberCypher("1234567890");
+        input = "0aa";
+        output = numberCypher.encrypt(input);
+        if (output != "1aa")
+        {
+            encrypterExitMessage = "Encryption failed";
+            return false;
+        }
+        input = numberCypher.decrypt(output);
+        if (input != "0aa")
+        {
+            encrypterExitMessage = "Decryption failed";
+            return false;
+        }
+        try
+        {
+            numberCypher = new("123456789");
+            encrypterExitMessage = "Initialization failed";
+            return false;
+        }
+        catch (Exception)
+        {
+
+        }
+        try
+        {
+            cypher = new Cypher("123456789a");
             encrypterExitMessage = "Initialization failed";
             return false;
         }
