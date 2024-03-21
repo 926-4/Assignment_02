@@ -220,8 +220,53 @@ internal static class Program
     static private string authenticaterExitMessage="";
     static private bool testAuthenticator()
     {
-        AuthentificationModule b = new AuthentificationModule();
-        b.AuthMethod();
+        Dictionary<string, string> credentials = new Dictionary<string, string>();
+        TimeSpan timeout = TimeSpan.FromSeconds(10);
+        credentials.Add("user1", "password1");
+        AuthentificationModule b = new AuthentificationModule(credentials, timeout);
+        string u1 = "user1", u2 = "user2", p1 = "password1", p2 = "password2";
+        try
+        {
+            b.AuthMethod(u1, p2);
+            authenticaterExitMessage = "Authenticater test failed";
+            return false;
+        }
+        catch (Exception)
+        {
+
+        }
+        try
+        {
+            b.AuthMethod("a", "5");
+            authenticaterExitMessage = "Authenticater test failed";
+            return false;
+        }
+        catch (Exception)
+        {
+
+        }
+        if (b.isUserLoggedIn(u2))
+        {
+            authenticaterExitMessage = "Authenticater test failed";
+            return false;
+        }
+        b.AuthMethod(u1, p1);
+        try
+        {
+            b.AuthMethod(u1, p1);
+            authenticaterExitMessage = "Authenticater test failed";
+            return false;
+        }
+        catch (Exception)
+        {
+
+        }
+        Thread.Sleep(11000);
+        if (!b.isUserLoggedIn(u1))
+        {
+            authenticaterExitMessage = "Authenticater test failed";
+            return false;
+        }
         authenticaterExitMessage = "Authenticater test successfully passed";
         return true;
     }
