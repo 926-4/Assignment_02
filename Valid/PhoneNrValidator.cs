@@ -28,10 +28,7 @@ namespace Valid
                     throw new Exception($"Unaccepted character in phone number pattern --{c}-- The pattern should only contain +,-,(,) and whitespaces, along with n representing any digit");
                 }
             }
-            while (config.Contains("n"))
-            {
-                config = config.Replace("n", "[0-9]");
-            }
+            config = config.Replace("n", "[0-9]");
             config = escapeSpecificChars(config);
             //Console.WriteLine(config);
             pattern = new(config, RegexOptions.None);

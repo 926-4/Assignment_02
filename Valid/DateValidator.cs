@@ -1,9 +1,10 @@
+using System.Text.RegularExpressions;
 namespace Valid
 { 
     class DateValidator : IValidator
     {
         private List<string> format;
-        private Regex pattern; 
+        private Regex? pattern; 
         private bool checkAllowedFormats(string toCheck)
         {
             return (toCheck == "dd-mm-yyyy") || (toCheck == "mm-dd-yyyy") || (toCheck == "yyyy-mm-dd") || (toCheck == "dd-mm-yy") || (toCheck == "mm-dd-yy");
@@ -17,14 +18,14 @@ namespace Valid
             else
             {
                 /// implement some checks
-                config.Replace(".", "-").replace("/", "-");
+                config.Replace(".", "-").Replace("/", "-");
             }
-            format = new List<string>() { config.Split("-") };
+            format = config.Split('-').ToList();
         }
         public string Apply(string input)
         {
             int inputIndex = 0;
-
+            return input;
         }
     }
 }
