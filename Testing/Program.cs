@@ -12,6 +12,8 @@ internal static class Program
         ValidatorFactory vf = new ValidatorFactory();
         IValidator sql = vf.getValidator(Valid.ValidationMode.SQL_COMMAND_SANITIZER);
         IValidator censor = vf.getValidator(Valid.ValidationMode.CENSOR_FORBIDDEN_WORDS);
+        IValidator romanianTelephoneNrChecker = vf.getValidator(Valid.ValidationMode.VALIDATE_PHONE_NUMBER, "+40nnnnnnnnn");
+        IValidator phone = vf.getValidator(Valid.ValidationMode.VALIDATE_PHONE_NUMBER);
         string input, output;
         input = "SELECT * FROM STUDENTS WHERE NAME = \"Mark\"; DROP TABLE STUDENTS \"\"";
         output = sql.Apply(input);
@@ -53,6 +55,20 @@ internal static class Program
         if (output != "Eu sunt ******* *******")
         {
             validatorExitMessage = "Censoring failed";
+            return false;
+        }
+        input = "+40723456789";
+        output = romanianTelephoneNrChecker.Apply(input);
+        if(output != input)
+        {
+            validatorExitMessage = "Checking phone nr failed";
+            return false;
+        }
+        input = "+12345678901";
+        output = phone.Apply(input);
+        if(output != input)
+        {
+            validatorExitMessage = "Checking phone nr failed";
             return false;
         }
         validatorExitMessage = "Validator test successfully passed";

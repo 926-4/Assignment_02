@@ -1,27 +1,9 @@
 ﻿using System.Runtime;
 namespace Valid
 {
-    
-
-    class PhoneNumberValidator : IValidator
-    {
-        internal PhoneNumberValidator(string config = "default") { }
-        public string Apply(string input)
-        {
-            return input;
-        }
-    }
     class EmailAddressValidator : IValidator
     {
         internal EmailAddressValidator(string config = "default") { }
-        public string Apply(string input)
-        {
-            return input;
-        }
-    }
-    class DateTimeValidator : IValidator
-    {
-        internal DateTimeValidator(string config = "default") { }
         public string Apply(string input)
         {
             return input;
@@ -45,7 +27,7 @@ namespace Valid
                 case ValidationMode.CENSOR_FORBIDDEN_WORDS: return new CensoringValidator(config);
                 case ValidationMode.VALIDATE_PHONE_NUMBER: return new PhoneNumberValidator(config);
                 case ValidationMode.VALIDATE_EMAIL_ADDRESS: return new EmailAddressValidator(config);
-                case ValidationMode.VALIDATE_DATE_TIME: return new DateTimeValidator(config);
+                case ValidationMode.VALIDATE_DATE_TIME: return new DateValidator(config);
                 default: throw new Exception("");
             }
         }
