@@ -101,3 +101,6 @@ D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\obj\Debu
 D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\obj\Debug\net8.0\Testing.pdb
 D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\obj\Debug\net8.0\Testing.genruntimeconfig.cache
 D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\obj\Debug\net8.0\ref\Testing.dll
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\bin\Debug\net8.0\ConfigurationManagement.deps.json
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\bin\Debug\net8.0\ConfigurationManagement.runtimeconfig.json
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\bin\Debug\net8.0\ConfigurationManagement.exe

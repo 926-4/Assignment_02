@@ -40,47 +40,24 @@ namespace ConfigurationManagement
         {
             DeserializeJSON();
             SerializeJSON();
-
-            Console.WriteLine("handle: ", this.handle);
-            Console.WriteLine("age: ", this.age);
-            Console.WriteLine("push_notifications: ", this.push_notifications);
         }
 
-        // deserialize JSON
         public void DeserializeJSON()
         {
             this.JsonString = File.ReadAllText(this.ConfigurationFileName);
 
             this.JsonString = this.JsonString.Substring(1, this.JsonString.Length - 2).Trim();
 
-            Console.WriteLine(this.JsonString);
-
             TraverseJsonString();
         }
 
         public void TraverseJsonString()
         {
-            // "handle": "neon1024_",
-            // "age": 20,
-            // "push_notifications": true
-
-            // steps
-            // get the key string
-            // get the value string
-            // key = value
-            // repeat
             while (this.JsonString.Length > 0)
             {
                 string key = GetNextKeyString();
 
-                Console.WriteLine(this.JsonString);
-
                 string value = GetNextValueString();
-
-                Console.WriteLine(this.JsonString);
-
-                Console.WriteLine(key);
-                Console.WriteLine(value);
 
                 AssignValueToKey(key, value);
             }
@@ -88,12 +65,11 @@ namespace ConfigurationManagement
 
         public string GetNextKeyString()
         {
-            // "key": "value"
+            this.JsonString = this.JsonString.TrimStart();
             int index = this.JsonString.IndexOf(':');
-            string keyString = this.JsonString.Substring(0, index).Trim('\"');
+            string keyString = this.JsonString.Substring(0, index).TrimStart().Trim('\"');
 
-            this.JsonString = this.JsonString.Substring(index + 1);
-            this.JsonString.TrimStart();
+            this.JsonString = this.JsonString.Substring(index + 1).TrimStart();
 
             return keyString;
         }
@@ -101,15 +77,13 @@ namespace ConfigurationManagement
         // TODO \" in string
         public string GetStringValue()
         {
-            // "value",
-            this.JsonString.TrimStart('\"');
+            this.JsonString = this.JsonString.TrimStart('\"');
 
-            // value",
             int index = this.JsonString.IndexOf('"');
 
             string valueString = this.JsonString.Substring(0, index);
 
-            this.JsonString = this.JsonString.Substring(index + 1).TrimStart(',', ' ');
+            this.JsonString = this.JsonString.Substring(index + 1).TrimStart().TrimStart(',', ' ');
 
             return valueString;
         }
@@ -118,7 +92,18 @@ namespace ConfigurationManagement
         {
             int index = this.JsonString.IndexOf(',');
 
-            string intString = this.JsonString.Substring(0, index);
+            string intString;
+
+            if (index == -1)
+            {
+                intString = this.JsonString;
+
+                this.JsonString = "";
+
+                return intString;
+            }
+
+            intString = this.JsonString.Substring(0, index);
 
             this.JsonString = this.JsonString.Substring(index + 1).TrimStart();
 
@@ -129,7 +114,18 @@ namespace ConfigurationManagement
         {
             int index = this.JsonString.IndexOf(',');
 
-            string boolString = this.JsonString.Substring(0, index);
+            string boolString;
+
+            if (index == -1)
+            {
+                boolString = this.JsonString;
+
+                this.JsonString = "";
+
+                return boolString;
+            }
+
+            boolString = this.JsonString.Substring(0, index);
 
             this.JsonString = this.JsonString.Substring(index + 1).TrimStart();
 
@@ -145,7 +141,7 @@ namespace ConfigurationManagement
                 return GetStringValue();
             }
 
-            if ((startingCharacter >= 0) && (startingCharacter <= 9))
+            if ((startingCharacter >= '0') && (startingCharacter <= '9'))
             {
                 return GetIntValue();
             }
@@ -230,10 +226,66 @@ namespace ConfigurationManagement
             }
         }
 
-        // serialize JSON
         public void SerializeJSON()
         {
+            this.JsonString = "";
+            this.JsonString += "{";
+            this.JsonString += "\n\t";
+            
+            this.JsonString += "\"handle\":" + $"\"{this.handle}\",";
+            this.JsonString += "\n\t";
 
+            this.JsonString += "\"username\":" + $"\"{this.username}\",";
+            this.JsonString += "\n\t";
+
+            this.JsonString += "\"bio\":" + $"\"{this.bio}\",";       
+            this.JsonString += "\n\t";
+
+            this.JsonString += "\"age\":" + $"{this.age},";
+            this.JsonString += "\n\t";
+
+            this.JsonString += "\"mail\":" + $"\"{this.mail}\",";       
+            this.JsonString += "\n\t";
+
+            this.JsonString += "\"phone.number\":" + $"\"{this.phone_number}\",";
+            this.JsonString += "\n\t";
+
+            this.JsonString += "\"two_factor_authentification\":" + $"{this.two_factor_authentification},";
+            this.JsonString += "\n\t";
+
+            this.JsonString += "\"profile_type\":" + $"\"{this.profile_type}\",";
+            this.JsonString += "\n\t";
+
+            this.JsonString += "\"allow_tags:\":" + $"{this.allow_tags},";
+            this.JsonString += "\n\t";
+
+            this.JsonString += "\"allow_messages\":" + $"{this.allow_messages},";
+            this.JsonString += "\n\t";
+
+            this.JsonString += "\"push_notifications\":" + $"{this.push_notifications},";
+            this.JsonString += "\n\t";
+
+            this.JsonString += "\"mail_notifications\":" + $"{this.mail_notifications},";
+            this.JsonString += "\n\t";
+
+            this.JsonString += "\"app_mode\":" + $"\"{this.app_mode}\",";
+            this.JsonString += "\n\t";
+
+            this.JsonString += "\"app_theme\":" + $"\"{app_theme}\",";
+            this.JsonString += "\n\t";
+
+            this.JsonString += "\"language\":" + $"\"{this.language}\",";
+            this.JsonString += "\n\t";
+
+            // TODO
+            /*
+            this.JsonString += "\"blocked_users\":" + $"[]";
+            this.JsonString += "\n";
+            */
+
+            this.JsonString += "}";
+
+            File.WriteAllText("JSON.json", this.JsonString);
         }
     }
 }

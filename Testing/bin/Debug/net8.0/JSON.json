@@ -1,0 +1,17 @@
+{
+	"handle":"neon1024_",
+	"username":"",
+	"bio":"",
+	"age":20,
+	"mail":"",
+	"phone.number":"",
+	"two_factor_authentification":False,
+	"profile_type":"",
+	"allow_tags:":False,
+	"allow_messages":False,
+	"push_notifications":True,
+	"mail_notifications":False,
+	"app_mode":"",
+	"app_theme":"",
+	"language":"",
+	}
