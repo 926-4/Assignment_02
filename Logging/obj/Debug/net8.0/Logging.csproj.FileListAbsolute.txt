@@ -34,3 +34,15 @@ C:\Users\Sirbu\Source\Repos\Assignment_02_2\Logging\obj\Debug\net8.0\Logging.dll
 C:\Users\Sirbu\Source\Repos\Assignment_02_2\Logging\obj\Debug\net8.0\refint\Logging.dll
 C:\Users\Sirbu\Source\Repos\Assignment_02_2\Logging\obj\Debug\net8.0\Logging.pdb
 C:\Users\Sirbu\Source\Repos\Assignment_02_2\Logging\obj\Debug\net8.0\ref\Logging.dll
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Logging\bin\Debug\net8.0\Logging.deps.json
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Logging\bin\Debug\net8.0\Logging.dll
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Logging\bin\Debug\net8.0\Logging.pdb
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Logging\obj\Debug\net8.0\Logging.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Logging\obj\Debug\net8.0\Logging.AssemblyInfoInputs.cache
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Logging\obj\Debug\net8.0\Logging.AssemblyInfo.cs
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Logging\obj\Debug\net8.0\Logging.csproj.CoreCompileInputs.cache
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Logging\obj\Debug\net8.0\Logging.sourcelink.json
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Logging\obj\Debug\net8.0\Logging.dll
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Logging\obj\Debug\net8.0\refint\Logging.dll
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Logging\obj\Debug\net8.0\Logging.pdb
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Logging\obj\Debug\net8.0\ref\Logging.dll

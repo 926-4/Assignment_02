@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Logging
-build_property.ProjectDir = C:\Users\Sirbu\Source\Repos\Assignment_02_2\Logging\
+build_property.ProjectDir = D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Logging\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

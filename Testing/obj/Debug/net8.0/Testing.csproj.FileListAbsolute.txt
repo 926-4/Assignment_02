@@ -74,3 +74,30 @@ C:\Users\Sirbu\Source\Repos\Assignment_02_2\Testing\bin\Debug\net8.0\Authentific
 C:\Users\Sirbu\Source\Repos\Assignment_02_2\Testing\bin\Debug\net8.0\Authentification.pdb
 C:\Users\Sirbu\Source\Repos\Assignment_02_2\Testing\bin\Debug\net8.0\ConfigurationManagement.dll
 C:\Users\Sirbu\Source\Repos\Assignment_02_2\Testing\bin\Debug\net8.0\ConfigurationManagement.pdb
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\bin\Debug\net8.0\Testing.exe
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\bin\Debug\net8.0\Testing.deps.json
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\bin\Debug\net8.0\Testing.runtimeconfig.json
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\bin\Debug\net8.0\Testing.dll
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\bin\Debug\net8.0\Testing.pdb
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\bin\Debug\net8.0\Authentification.dll
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\bin\Debug\net8.0\ConfigurationManagement.dll
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\bin\Debug\net8.0\Encryption.dll
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\bin\Debug\net8.0\Logging.dll
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\bin\Debug\net8.0\Valid.dll
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\bin\Debug\net8.0\Logging.pdb
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\bin\Debug\net8.0\Valid.pdb
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\bin\Debug\net8.0\Encryption.pdb
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\bin\Debug\net8.0\Authentification.pdb
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\bin\Debug\net8.0\ConfigurationManagement.pdb
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\obj\Debug\net8.0\Testing.csproj.AssemblyReference.cache
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\obj\Debug\net8.0\Testing.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\obj\Debug\net8.0\Testing.AssemblyInfoInputs.cache
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\obj\Debug\net8.0\Testing.AssemblyInfo.cs
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\obj\Debug\net8.0\Testing.csproj.CoreCompileInputs.cache
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\obj\Debug\net8.0\Testing.sourcelink.json
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\obj\Debug\net8.0\Testing.csproj.Up2Date
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\obj\Debug\net8.0\Testing.dll
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\obj\Debug\net8.0\refint\Testing.dll
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\obj\Debug\net8.0\Testing.pdb
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\obj\Debug\net8.0\Testing.genruntimeconfig.cache
+D:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\Testing\obj\Debug\net8.0\ref\Testing.dll

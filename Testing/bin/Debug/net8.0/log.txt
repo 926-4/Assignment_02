@@ -1,0 +1,5 @@
+24-Mar-24 14:39:09 [Info]: Test info message
+24-Mar-24 14:39:09 [Warning]: Test warning message
+24-Mar-24 14:39:09 [Error]: Test error message
+24-Mar-24 14:39:09 [Info]: Test info message 1
+24-Mar-24 14:39:09 [Info]: Test info message 2

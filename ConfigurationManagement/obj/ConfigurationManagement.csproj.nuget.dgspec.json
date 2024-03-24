@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Sirbu\\Source\\Repos\\Assignment_02_2\\ConfigurationManagement\\ConfigurationManagement.csproj": {}
+    "D:\\Coding Spaces\\UBB\\Software-Systems-Engineering\\Assignment_02\\ConfigurationManagement\\ConfigurationManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Sirbu\\Source\\Repos\\Assignment_02_2\\ConfigurationManagement\\ConfigurationManagement.csproj": {
+    "D:\\Coding Spaces\\UBB\\Software-Systems-Engineering\\Assignment_02\\ConfigurationManagement\\ConfigurationManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Sirbu\\Source\\Repos\\Assignment_02_2\\ConfigurationManagement\\ConfigurationManagement.csproj",
+        "projectUniqueName": "D:\\Coding Spaces\\UBB\\Software-Systems-Engineering\\Assignment_02\\ConfigurationManagement\\ConfigurationManagement.csproj",
         "projectName": "ConfigurationManagement",
-        "projectPath": "C:\\Users\\Sirbu\\Source\\Repos\\Assignment_02_2\\ConfigurationManagement\\ConfigurationManagement.csproj",
-        "packagesPath": "C:\\Users\\Sirbu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Sirbu\\Source\\Repos\\Assignment_02_2\\ConfigurationManagement\\obj\\",
+        "projectPath": "D:\\Coding Spaces\\UBB\\Software-Systems-Engineering\\Assignment_02\\ConfigurationManagement\\ConfigurationManagement.csproj",
+        "packagesPath": "C:\\Users\\rober\\.nuget\\packages\\",
+        "outputPath": "D:\\Coding Spaces\\UBB\\Software-Systems-Engineering\\Assignment_02\\ConfigurationManagement\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Sirbu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\rober\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

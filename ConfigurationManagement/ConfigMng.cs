@@ -1,77 +1,11 @@
-﻿using System.Net.Mail;
-using System.Net.NetworkInformation;
-using System.Text.Json;
+﻿using ConfigurationManagement;
+using System.ComponentModel.Design;
 
 namespace ConfigurationManagement
 {
-    // TODO User is outside of this module
     public class User
     {
-
-    }
-
-    public class Profile
-    {
-        public string handle { get; set; }
-        public string username { get; set; }
-        public string bio { get; set; }
-        public int age { get; set; }
-        public string mail { get; set; }
-        public string phone_number { get; set; }
-    
-        public Profile(string handle="@user", string username="username", string bio="none", int age=0, string mail="user@mail", string phone="0000000000") { }
-    }
-
-    public class Privacy
-    {
-        public Privacy(string profile_type = "public", bool allow_tags = true, bool allow_message = true) { }
-        
-        public string profile_type { get; set; }
-        public bool allow_tags { get; set; }
-        public bool allow_message { get; set; }
-
-    }
-
-    public class Notifications
-    {
-        public bool push { get; set; }
-        public bool mail { get; set; }
-
-        public Notifications(bool push=true, bool mail=true) { }
-    }
-
-    public class UserSettings
-    {
-        public Profile profile { get; set; }
-        public Privacy privacy { get; set; }
-        public Notifications notifications { get; set; }
-
-        public UserSettings(Profile profile, Privacy privacy, Notifications notifications) { }
-    }
-
-    public class Appearance
-    {
-        public string mode { get; set; }
-        public string theme { get; set; }
-
-        public Appearance(string mode="system", string theme="default") { }
-    }
-
-    public class AdvancedSettings
-    {
-        public bool two_factor_authentification { get; set; }
-        public List<User> blocked_users { get; set; }
-
-        public AdvancedSettings(bool two_factor_authentification = false, List<User> blocked_users = []) { }
-    }
-
-    public class Configuration
-    {
-        public UserSettings user_settings { get; set; }
-        public Appearance appearance { get; set; }
-        public string language { get; set; }
-
-        public Configuration(UserSettings user_settings, Appearance appearance, string languag = "en-US") { }
+        // TODO external import
     }
 
     public class ConfigMngModule
@@ -79,20 +13,37 @@ namespace ConfigurationManagement
         private string ConfigurationFileName;
         private string JsonString;
 
-        public ConfigMngModule(string ConfigurationFileName = "config.json", string JsonString = "") { }
+        private string handle;
+        private string username;
+        private string bio;
+        private int age;
+        private string mail;
+        private string phone_number;
+        private bool two_factor_authentification;
+        private string profile_type;
+        private bool allow_tags;
+        private bool allow_messages;
+        private bool push_notifications;
+        private bool mail_notifications;
+        private string app_mode;
+        private string app_theme;
+        private string language;
+        private List<User> blocked_users;
 
+        public ConfigMngModule(string ConfigurationFileName = "config.json", string JsonString = "")
+        {
+            this.ConfigurationFileName = ConfigurationFileName;
+            this.JsonString = JsonString;
+        }
+        
         public void ConfigMethod()
         {
-            ReadConfigurationFileName();
             DeserializeJSON();
-            Console.WriteLine("CONFIG WORKING");
-        }
+            SerializeJSON();
 
-        public void ReadConfigurationFileName()
-        {
-            // constant or?
-            this.ConfigurationFileName = "./config.json";
-            // TODO validate
+            Console.WriteLine("handle: ", this.handle);
+            Console.WriteLine("age: ", this.age);
+            Console.WriteLine("push_notifications: ", this.push_notifications);
         }
 
         // deserialize JSON
@@ -100,7 +51,183 @@ namespace ConfigurationManagement
         {
             this.JsonString = File.ReadAllText(this.ConfigurationFileName);
 
-            Configuration configuration = JsonSerializer.Deserialize<Configuration>(this.JsonString);
+            this.JsonString = this.JsonString.Substring(1, this.JsonString.Length - 2).Trim();
+
+            Console.WriteLine(this.JsonString);
+
+            TraverseJsonString();
+        }
+
+        public void TraverseJsonString()
+        {
+            // "handle": "neon1024_",
+            // "age": 20,
+            // "push_notifications": true
+
+            // steps
+            // get the key string
+            // get the value string
+            // key = value
+            // repeat
+            while (this.JsonString.Length > 0)
+            {
+                string key = GetNextKeyString();
+
+                Console.WriteLine(this.JsonString);
+
+                string value = GetNextValueString();
+
+                Console.WriteLine(this.JsonString);
+
+                Console.WriteLine(key);
+                Console.WriteLine(value);
+
+                AssignValueToKey(key, value);
+            }
+        }
+
+        public string GetNextKeyString()
+        {
+            // "key": "value"
+            int index = this.JsonString.IndexOf(':');
+            string keyString = this.JsonString.Substring(0, index).Trim('\"');
+
+            this.JsonString = this.JsonString.Substring(index + 1);
+            this.JsonString.TrimStart();
+
+            return keyString;
+        }
+
+        // TODO \" in string
+        public string GetStringValue()
+        {
+            // "value",
+            this.JsonString.TrimStart('\"');
+
+            // value",
+            int index = this.JsonString.IndexOf('"');
+
+            string valueString = this.JsonString.Substring(0, index);
+
+            this.JsonString = this.JsonString.Substring(index + 1).TrimStart(',', ' ');
+
+            return valueString;
+        }
+
+        public string GetIntValue()
+        {
+            int index = this.JsonString.IndexOf(',');
+
+            string intString = this.JsonString.Substring(0, index);
+
+            this.JsonString = this.JsonString.Substring(index + 1).TrimStart();
+
+            return intString;
+        }
+
+        public string GetBoolValue()
+        {
+            int index = this.JsonString.IndexOf(',');
+
+            string boolString = this.JsonString.Substring(0, index);
+
+            this.JsonString = this.JsonString.Substring(index + 1).TrimStart();
+
+            return boolString;
+        }
+
+        public string GetNextValueString()
+        {
+            char startingCharacter = this.JsonString[0];
+
+            if (startingCharacter == '\"')
+            {
+                return GetStringValue();
+            }
+
+            if ((startingCharacter >= 0) && (startingCharacter <= 9))
+            {
+                return GetIntValue();
+            }
+
+            if ((startingCharacter == 't') || (startingCharacter == 'T') || (startingCharacter == 'f') || (startingCharacter == 'F'))
+            {
+                return GetBoolValue();
+            }
+
+            return "";
+        }
+
+        public void AssignValueToKey(string key, string value)
+        {
+            switch(key)
+            {
+                case "handle":
+                    this.handle = value;
+                    break;
+
+                case "username":
+                    this.username = value;
+                    break;
+
+                case "bio":
+                    this.bio = value;
+                    break;
+
+                case "age":
+                    this.age = Int32.Parse(value);
+                    break;
+
+                case "mail":
+                    this.mail = value;
+                    break;
+
+                case "phone_number":
+                    this.phone_number = value;
+                    break;
+
+                case "two_factor_authentification":
+                    this.two_factor_authentification = Boolean.Parse(value);
+                    break;
+
+                case "profile_type":
+                    this.profile_type = value;
+                    break;
+
+                case "allow_tags":
+                    this.allow_tags = Boolean.Parse(value);
+                    break;
+
+                case "allow_messages":
+                    this.allow_messages = Boolean.Parse(value);
+                    break;
+
+                case "push_notifications":
+                    this.push_notifications = Boolean.Parse(value);
+                    break;
+
+                case "mail_notifications":
+                    this.mail_notifications = Boolean.Parse(value);
+                    break;
+
+                case "app_theme":
+                    this.app_theme = value;
+                    break;
+
+                case "app_mode":
+                    this.app_mode = value;
+                    break;
+
+                case "language":
+                    this.language = value;
+                    break;
+
+                case "blocked_users":
+                    break;
+
+                default:
+                    break;
+            }
         }
 
         // serialize JSON
@@ -108,5 +235,14 @@ namespace ConfigurationManagement
         {
 
         }
+    }
+}
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        ConfigMngModule c = new ConfigMngModule();
+        c.ConfigMethod();
     }
 }
