@@ -1,0 +1,15 @@
+C:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\ConfigurationManagement\bin\Debug\net8.0\ConfigurationManagement.exe
+C:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\ConfigurationManagement\bin\Debug\net8.0\ConfigurationManagement.deps.json
+C:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\ConfigurationManagement\bin\Debug\net8.0\ConfigurationManagement.runtimeconfig.json
+C:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\ConfigurationManagement\bin\Debug\net8.0\ConfigurationManagement.dll
+C:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\ConfigurationManagement\bin\Debug\net8.0\ConfigurationManagement.pdb
+C:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\ConfigurationManagement\obj\Debug\net8.0\ConfigurationManagement.GeneratedMSBuildEditorConfig.editorconfig
+C:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\ConfigurationManagement\obj\Debug\net8.0\ConfigurationManagement.AssemblyInfoInputs.cache
+C:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\ConfigurationManagement\obj\Debug\net8.0\ConfigurationManagement.AssemblyInfo.cs
+C:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\ConfigurationManagement\obj\Debug\net8.0\ConfigurationManagement.csproj.CoreCompileInputs.cache
+C:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\ConfigurationManagement\obj\Debug\net8.0\ConfigurationManagement.sourcelink.json
+C:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\ConfigurationManagement\obj\Debug\net8.0\ConfigurationManagement.dll
+C:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\ConfigurationManagement\obj\Debug\net8.0\refint\ConfigurationManagement.dll
+C:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\ConfigurationManagement\obj\Debug\net8.0\ConfigurationManagement.pdb
+C:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\ConfigurationManagement\obj\Debug\net8.0\ConfigurationManagement.genruntimeconfig.cache
+C:\Coding Spaces\UBB\Software-Systems-Engineering\Assignment_02\ConfigurationManagement\obj\Debug\net8.0\ref\ConfigurationManagement.dll

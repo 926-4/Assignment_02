@@ -3,11 +3,6 @@ using System.ComponentModel.Design;
 
 namespace ConfigurationManagement
 {
-    public class User
-    {
-        // TODO external import
-    }
-
     public class ConfigMngModule
     {
         private string ConfigurationFileName;
@@ -28,7 +23,7 @@ namespace ConfigurationManagement
         private string app_mode;
         private string app_theme;
         private string language;
-        private List<User> blocked_users;
+        private string[] blocked_users;
 
         public ConfigMngModule(string ConfigurationFileName = "config.json", string JsonString = "")
         {
@@ -132,6 +127,24 @@ namespace ConfigurationManagement
             return boolString;
         }
 
+        public string GetArrayValue()
+        {
+            this.JsonString = this.JsonString.Substring(1);
+
+            int index = this.JsonString.IndexOf(']');
+
+            string arrayValue = this.JsonString.Substring(0, index).Trim();
+
+            this.JsonString = this.JsonString.Substring(index + 1).TrimStart().TrimStart(',', ' ');
+
+            if(this.JsonString.IndexOf(',') == -1)
+            {
+                this.JsonString = "";
+            }
+
+            return arrayValue;
+        }
+
         public string GetNextValueString()
         {
             char startingCharacter = this.JsonString[0];
@@ -149,6 +162,11 @@ namespace ConfigurationManagement
             if ((startingCharacter == 't') || (startingCharacter == 'T') || (startingCharacter == 'f') || (startingCharacter == 'F'))
             {
                 return GetBoolValue();
+            }
+
+            if(startingCharacter == '[')
+            {
+                return GetArrayValue();
             }
 
             return "";
@@ -219,6 +237,7 @@ namespace ConfigurationManagement
                     break;
 
                 case "blocked_users":
+                    this.blocked_users = value.Split(',');
                     break;
 
                 default:

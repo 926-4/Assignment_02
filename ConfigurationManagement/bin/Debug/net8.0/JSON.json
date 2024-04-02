@@ -1,0 +1,17 @@
+{
+	"handle":"@neon1024",
+	"username":"Ioan",
+	"bio":"CS Student",
+	"age":20,
+	"mail":"robertscumnpu@gmail.com",
+	"phone.number":"0743249372",
+	"two_factor_authentification":True,
+	"profile_type":"public",
+	"allow_tags:":True,
+	"allow_messages":True,
+	"push_notifications":True,
+	"mail_notifications":False,
+	"app_mode":"dark",
+	"app_theme":"default",
+	"language":"en-US",
+	}
