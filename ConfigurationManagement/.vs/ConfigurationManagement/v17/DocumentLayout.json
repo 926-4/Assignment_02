@@ -5,6 +5,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{55B60112-DC7A-45FE-9F6A-BA1864C1606A}|ConfigurationManagement.csproj|c:\\coding spaces\\ubb\\software-systems-engineering\\assignment_02\\configurationmanagement\\configmng.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{55B60112-DC7A-45FE-9F6A-BA1864C1606A}|ConfigurationManagement.csproj|solutionrelative:configmng.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Coding Spaces\\UBB\\Software-Systems-Engineering\\Assignment_02\\ConfigurationManagement\\bin\\Debug\\net8.0\\config.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:bin\\Debug\\net8.0\\config.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Coding Spaces\\UBB\\Software-Systems-Engineering\\Assignment_02\\ConfigurationManagement\\bin\\Debug\\net8.0\\JSON.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:bin\\Debug\\net8.0\\JSON.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +22,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "config.json",
+              "DocumentMoniker": "C:\\Coding Spaces\\UBB\\Software-Systems-Engineering\\Assignment_02\\ConfigurationManagement\\bin\\Debug\\net8.0\\config.json",
+              "RelativeDocumentMoniker": "bin\\Debug\\net8.0\\config.json",
+              "ToolTip": "C:\\Coding Spaces\\UBB\\Software-Systems-Engineering\\Assignment_02\\ConfigurationManagement\\bin\\Debug\\net8.0\\config.json",
+              "RelativeToolTip": "bin\\Debug\\net8.0\\config.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-04T14:13:03.647Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "JSON.json",
+              "DocumentMoniker": "C:\\Coding Spaces\\UBB\\Software-Systems-Engineering\\Assignment_02\\ConfigurationManagement\\bin\\Debug\\net8.0\\JSON.json",
+              "RelativeDocumentMoniker": "bin\\Debug\\net8.0\\JSON.json",
+              "ToolTip": "C:\\Coding Spaces\\UBB\\Software-Systems-Engineering\\Assignment_02\\ConfigurationManagement\\bin\\Debug\\net8.0\\JSON.json",
+              "RelativeToolTip": "bin\\Debug\\net8.0\\JSON.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-04T14:14:13.862Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +58,7 @@
               "RelativeDocumentMoniker": "ConfigMng.cs",
               "ToolTip": "C:\\Coding Spaces\\UBB\\Software-Systems-Engineering\\Assignment_02\\ConfigurationManagement\\ConfigMng.cs",
               "RelativeToolTip": "ConfigMng.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAgwDYAAAA0AAAA",
+              "ViewState": "AQIAAKkAAAAAAAAAAAAIwLMAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-02T18:04:20.611Z",
               "EditorCaption": ""

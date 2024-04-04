@@ -296,11 +296,16 @@ namespace ConfigurationManagement
             this.JsonString += "\"language\":" + $"\"{this.language}\",";
             this.JsonString += "\n\t";
 
-            // TODO
-            /*
-            this.JsonString += "\"blocked_users\":" + $"[]";
+            if (this.blocked_users.Length > 1)
+            {
+                this.JsonString += "\"blocked_users\":" + $"{String.Join(",", this.blocked_users)}";
+            }
+            else
+            {
+                this.JsonString += "\"blocked_users\":" + "[]";
+            }
+
             this.JsonString += "\n";
-            */
 
             this.JsonString += "}";
 
